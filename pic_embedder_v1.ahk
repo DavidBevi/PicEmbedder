@@ -73,7 +73,7 @@ Encode_in_TXT(src_filepath:="", dest_filepath:="") {
         SplitPath(src_filepath,,, &extension)
         title:= '𝘾𝙊𝙋𝙔 𝘼𝙇𝙎𝙊 𝙏𝙃𝙀 𝘿𝙀𝘾𝙊𝘿𝙀𝙍 𝙁𝙐𝙉𝘾𝙏𝙄𝙊𝙉?'
         above:= '; VARIABLES - REQUIRED ################################`nIMG_STRING := "'
-        dummystring:= '𝙀𝙉𝘾𝙊𝘿𝙀𝘿 𝙄𝙈𝙂_𝙎𝙏𝙍𝙄𝙉𝙂 𝙒𝙄𝙇𝙇 𝘽𝙀 𝙃𝙀𝙍𝙀 𝙒𝙃𝙀𝙉 𝙔𝙊𝙐 𝘾𝙊𝙋𝙔'
+        dummystring:= '𝙀𝙉𝘾𝙊𝘿𝙀𝘿 𝙄𝙈𝙂_𝙎𝙏𝙍𝙄𝙉𝙂 𝙒𝙄𝙇𝙇 𝘽𝙀 𝙃𝙀𝙍𝙀'
         below:= '"`nEXTENSION := "' extension '"`n;`n;`n; CALL ##########################'
         below.= '######################`nTraySetIcon(Decode_IMG(IMG_STRING, EXTENSION))`n'
         below.= ';`n;`n; FUNCTION ############################################`nDecode_IM'
