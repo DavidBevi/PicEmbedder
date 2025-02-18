@@ -4,7 +4,7 @@ This script is inspired by [iPhilip's port of JustMe's **image2include**](https:
 
 **PicEmbedder** produces a **more compact** code and it offers a **guided procedure** to do it.
 
-### HOW?<br>Just download and open PicEmbedder v1.0.1: [`.AHK`](https://github.com/DavidBevi/PicEmbedder/releases/download/v1.0.1/pic_embedder_v1.0.1.ahk) | [`.EXE`](https://github.com/DavidBevi/PicEmbedder/releases/download/v1.0.1/pic_embedder_v1.0.1.exe)
+###  <br>Just download and open [PicEmbedder.ahk](https://github.com/DavidBevi/PicEmbedder/releases/download/v1.0.1/pic_embedder_v1.0.1.ahk) or [PicEmbedder.exe](https://github.com/DavidBevi/PicEmbedder/releases/download/v1.0.1/pic_embedder_v1.0.1.exe)
 
 1. &nbsp;**PicEmbedder** will ask you to **select an image** to encode.<br>![image](https://github.com/user-attachments/assets/ea03d072-ca1a-41f6-97c1-71b8b2923dbf)
 
