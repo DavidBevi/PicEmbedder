@@ -1,8 +1,8 @@
-# [PicEmbedder](https://github.com/DavidBevi/PicEmbedder/blob/main/pic_embedder_v1.ahk)<sup> v1</sup> → [FileEmbedder](https://github.com/DavidBevi/PicEmbedder/blob/main/file_embedder_v2.ahk)<sup> v2</sup>
+# [PicEmbedder](https://github.com/DavidBevi/PicEmbedder/blob/main/pic_embedder_v1.ahk)<sup> old</sup> → [FileEmbedder](https://github.com/DavidBevi/PicEmbedder/blob/main/file_embedder_v2.ahk)<sup> new</sup>
 ### Embed files into uncompiled AHK v2 scripts
 
-- **v1** - was already capable of encoding any file in a string but designed to only accept pictures.
-- **v2** - removes the arbitrary limit, therefore the script is renamed.
+- **old** - was already capable of encoding any file in a string but designed to only accept pictures.
+- **new** - removes the arbitrary limit, therefore the script is renamed.
 - **todo** - rework this page, possibly open a new repo.
 
 <br/>
@@ -11,7 +11,7 @@
 
 This script is inspired by [iPhilip's port of JustMe's **image2include**](https://www.autohotkey.com/boards/viewtopic.php?f=83&t=119966) and by [EpicKeyboardGuy's **Embed ANY files into your script**](https://www.reddit.com/r/AutoHotkey/comments/1ina2y7/embed_any_files_into_your_script/).
 
-This script produces a **more compact** code and it offers a **guided procedure** to do encoding and embedding.
+My script produces a **more compact** code and it offers a **guided procedure** to do encoding and embedding.
 
 <br/>
 
