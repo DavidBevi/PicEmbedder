@@ -4,7 +4,7 @@
 
 
 #Requires AutoHotKey v2
-Esc::(A_ThisHotkey=A_PriorHotkey and A_TimeSincePriorHotkey<200)? Reload(): {}
+Esc::(A_ThisHotkey=A_PriorHotkey && A_TimeSincePriorHotkey<200)? Reload(): {}
 
 
 ; EMBEDDED-TRAY-ICON #############################################################################
@@ -39,20 +39,20 @@ FileRemaker(encoded_string) {
 fpicker.Title := "Pick a file to encode"
 fpicker(*) {
     ; Disable button while FileSelect is open
-    button_file_picker.opt("+Disabled")
+    bt.opt("+Disabled")
     filepath := FileSelect(1,, fpicker.title)
 
     ; Either change text to 'loading' or restore button + return
     If filepath {
-        button_file_picker.Text := "Encoding..."
+        bt.Text := "Encoding..."
     } Else {
-        button_file_picker.opt("-Disabled")
+        bt.opt("-Disabled")
         Return
     }
 
     ; SPINNER-SUBFUNC
-    sp.c:="⠿⠧⠇⠏⠟⠻⠹⠸⠼⠾",  sp.i:=0,  sp.l:=StrLen(sp.c)
-    sp(*)=>(t1.Text:=(button_file_picker.Text~="Encod"?SubStr(sp.c,sp.i,1):"1:"), sp.i:=Mod(sp.i+1,sp.l))
+    sp.c:="⠿⠧⠇⠏⠟⠻⠹⠸⠼⠾",  sp.i:=0,
+    sp(*)=>(t1.Text:=(bt.Text~="Encod"?SubStr(sp.c,sp.i,1):"1:"), sp.i:=Mod(sp.i+1,10))
     SetTimer(sp, filepath?50:0)
 
     ; Prepare clipboard and message
@@ -60,11 +60,11 @@ fpicker(*) {
     msg := "𝐒𝐔𝐂𝐂𝐄𝐒𝐒! 𝐓𝐇𝐄 𝐅𝐎𝐋𝐋𝐎𝐖𝐈𝐍𝐆 𝐂𝐎𝐃𝐄 𝐈𝐒 𝐍𝐎𝐖 𝐑𝐄𝐀𝐃𝐘 𝐓𝐎 𝐁𝐄 𝐏𝐀𝐒𝐓𝐄𝐃:`n`n"
 
     ; Copy encoded string?    
-    If button_copy_encodedstr.Value = 1 {
+    If c1.Value = 1 {
         Try encoded_str := FileEncoder(filepath)
         Catch {
             MsgBox("Error converting " filepath, "Error")
-            button_file_picker.opt("-Disabled")
+            bt.opt("-Disabled")
             Return
         }
         clp .= 'encoded_str := "' encoded_str '"`n`n'
@@ -72,7 +72,7 @@ fpicker(*) {
     }
 
     ; Copy decoder func?
-    If button_copy_decoderfunc.Value = 1 {
+    If c2.Value = 1 {
         fn :=   'FileRemaker(encoded_string) {`n' .
                 '    _b := Buffer(1),  _f := FileOpen(A_Temp "\file", "w")`n' .
                 '    For ch in StrSplit(encoded_string)`n' .
@@ -84,8 +84,8 @@ fpicker(*) {
     }
     
     ; Restore button
-    button_file_picker.Text := "Open file picker"
-    button_file_picker.opt("-Disabled")
+    bt.Text := "Open file picker"
+    bt.opt("-Disabled")
 
     ; Update clipboard and show confirmation msgbox
     A_Clipboard := clp
@@ -133,12 +133,12 @@ gui_mover(*) {
 g := Gui("-DPIScale +ToolWindow +AlwaysOnTop", "File→Text encoder")
 g.SetFont("s10")
 t1 := g.AddText("x10","1:")
-button_file_picker := g.AddButton("x+2 yp-6 hp+12", "Open file picker")
-button_file_picker.OnEvent('Click', fpicker)
+bt := g.AddButton("x+2 yp-6 hp+12", "Open file picker")
+bt.OnEvent('Click', fpicker)
 
 t2 := g.AddText("x10","2:  Click 'open' to copy:")
-button_copy_encodedstr := g.AddCheckbox("x20 Checked", " the encoded string")
-button_copy_decoderfunc := g.AddCheckbox("x20", " the decoder function")
+c1 := g.AddCheckbox("x20 Checked", " the encoded string")
+c2 := g.AddCheckbox("x20", " the decoder function")
 
 g.OnEvent("Close", (*)=>ExitApp())
 
