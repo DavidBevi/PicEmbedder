@@ -6,7 +6,7 @@ Copy encoded files and the decoder text into your AHK scripts.
 
 <br/>
 
-### [Missing preview]
+### ![Preview](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.png?raw=true)
 
 <br/>
 
