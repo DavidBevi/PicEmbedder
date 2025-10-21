@@ -1,3 +1,4 @@
+
 #Requires AutoHotKey v2
 Esc::(A_ThisHotkey=A_PriorHotkey and A_TimeSincePriorHotkey<200)? Reload(): {}
 
@@ -99,6 +100,7 @@ spinner(p:=-1) {
 copy_text(*) {
     A_Clipboard := (((_c1.Value && encoded_string)? encoded_string "`n`n" :"") .
         (_c2.Value? decoder_printable "`n`n" :"") (_c3.Value? example_printable "`n`n" :""))
+    A_Clipboard?{}:A_Clipboard:="𝐘𝐎𝐔 𝐅𝐎𝐔𝐍𝐃 𝐓𝐇𝐄 𝐄𝐀𝐒𝐓𝐄𝐑 𝐄𝐆𝐆"
     _b2.Text := "𝐂𝐎𝐏𝐈𝐄𝐃"
     SetTimer((*)=>(_b2.Text := "Copy to clipboard the selected things below"),-1000)
 }
