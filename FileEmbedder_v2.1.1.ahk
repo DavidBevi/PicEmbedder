@@ -135,9 +135,9 @@ spinner(p:=-1) {
 g := Gui("-DPIScale", "FileEmbedder")
 g.OnEvent("Close", (*)=>ExitApp())
 
-;Explanation (green text)
+;Green text (info / results)
 g.SetFont("s8 c1e6c39", "Segoe UI")
-_t0 := g.AddText("x13 ", info_text)
+_t0 := g.AddText("x13", info_text)
 
 ;Buttons
 g.SetFont("s9 cDefault", "Segoe UI")
@@ -150,19 +150,20 @@ _b2.OnEvent('Click', copy_text)
 g.SetFont("s9 bold", "Segoe UI")
 _c1 := g.AddCheckbox("x12 Checked Disabled", " Copy the encoded string")
 g.SetFont("s8 norm", "Consolas")
-_t1 := g.AddText("x33 y+1 r1 c666666", encoded_short)
+_t1 := g.AddText("x33 y+1 c666666", encoded_short)
 
 ;2nd checkmark group (copy decoder)
 g.SetFont("s9 bold", "Segoe UI")
 _c2 := g.AddCheckbox("x12 Checked", " Copy the decoder function")
 g.SetFont("s8 norm", "Consolas")
-_t2 := g.AddText("x33 y+1 r7", decoder_printable)
+_t2 := g.AddText("x33 y+1", decoder_printable)
 
 ;3rd checkmark group (copy example)
 g.SetFont("s9 bold", "Segoe UI")
 _c3 := g.AddCheckbox("x12 Checked", " Copy an example")
 g.SetFont("s8 norm", "Consolas")
-_t3 := g.AddText("x33 y+1 r1", example_printable)
+_t3 := g.AddText("x33 y+1", example_printable)
+
 
 
 ; RUN SCRIPT #############################################################################
