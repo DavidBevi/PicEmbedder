@@ -9,7 +9,7 @@
 <br/>
 
 ### Abstract
-Each byte of the source file is converted to a character. Since some chars are not printable (like `linefeed` and `tab`) and others are undesirable (like `"`, `'`, `/``), these "bad" chars are transformed into chars that are encoded in 2 bytes.
+Each byte of the source file is converted to a character. Since some chars are not printable (like `linefeed` and `tab`) and others are undesirable (like `"`, `'`, `` ` ``), these "bad" chars are transformed into chars that are encoded in 2 bytes.
 
 Before this conversion every char gets shifted by 33 (char 0 becomes 33 and so on) in order to minimize "bad" chars that need the transformation, therefore limiting the file increase (most evident on txt and small files, like icons).
 
