@@ -1,10 +1,10 @@
-# PicEmbedder<sup> (v1)</sup> - now [FileEmbedder](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.ahk)<sup> (v2.1)</sup>
+# FileEmbedder <sup><sub>v2.1.1 - previously PicEmbedder</sub></sup>
 
 **Encode files into text**, to embed into your AHK script & get rid of external dependencies.
 
-**Simple to use**, just [**Download**](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.1.ahk), launch, & follow instructions!
+**Simple to use** - just [**Download**](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.1.1.ahk), launch, & follow instructions!
 
-### ![Preview](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.1.png?raw=true)
+### ![Demo gif of v2.1.1](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.1.1.gif?raw=true)
 
 <br/>
 
