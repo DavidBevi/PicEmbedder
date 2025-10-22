@@ -1,10 +1,17 @@
 # FileEmbedder <sup><sub>v2.1.1 - previously PicEmbedder</sub></sup>
 
-**Encode files into text**, to embed into your AHK script & get rid of external dependencies.
+**Encode files into text** - embed resources as code and get rid of external dependencies.
 
 **Simple to use** - just [**Download**](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.1.1.ahk), launch, & follow instructions!
 
 ### ![Demo gif of v2.1.1](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.1.1.gif?raw=true)
+
+<br/>
+
+### Abstract
+Each byte of the source file is converted to a character. Since some chars are not printable (like `linefeed` and `tab`) and others are undesirable (like `"`, `'`, `/``), these "bad" chars are transformed into chars that are encoded in 2 bytes.
+
+Before this conversion every char gets shifted by 33 (char 0 becomes 33 and so on) in order to minimize "bad" chars that need the transformation, therefore limiting the file increase (most evident on txt and small files, like icons).
 
 <br/>
 
