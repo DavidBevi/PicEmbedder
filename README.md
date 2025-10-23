@@ -9,12 +9,11 @@
 <br/>
 
 ### Abstract
-Each byte of the source file is read as if it was a character. Result includes non-printable chars (`linefeed`, `tab`, `space`…), so these "bad" chars are shifted by 256, becoming 2-bytes chars. Quotes (`"`, `'`, `` ` ``) undergo the same process.
+**ENCODING** reads each byte of the source file as if it was a character.
+> **TECHNICAL**: each char is shifted by 33 to reduce "bad chars", which are non-printables (`linefeed`, `tab`, `space`…) and quotes (`"`, `'`, `` ` ``). Bad chars are then increased by 256, becoming 2-bytes chars. This means that the encoded string uses more bytes than the file. After encoding the green text will show you the size increase.
 
-Before this process every char gets shifted by 33, because in my testings this reduces "bad" chars that need 2 bytes, limiting size-increase (most evident on txts and small files, like icons).
-
-Decoding does the same in reverse and saves the result in a file called `file` in your temp folder.
-> **TECHNICAL**: each decoded byte is a **`num`** that fits in a byte, but AHK uses multiple bytes to store it. To write only the byte that stores **`num`** I use the ability of `.RawWrite` of accepting `address, len`, with <code>StrPtr(Chr(**num**)), 1</code> instead of **`num`**.
+**DECODING** does the reverse and saves the result in a file called `file` in your temp folder.
+> **TECHNICAL**: each decoded char is a **`num`** that fits in 1 byte, but AHK uses multiple bytes to store it. To write only the byte that actually stores **`num`** I use the ability of `.RawWrite` of accepting `address, len`, and I use <code>StrPtr(Chr(**num**)), 1</code> instead of **`num`**.
 
 <br/>
 
