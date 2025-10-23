@@ -9,9 +9,12 @@
 <br/>
 
 ### Abstract
-Each byte of the source file is converted to a character. Since some chars are not printable (`linefeed`, `tab`, `space`...) and others are undesirable (`"`, `'`, `` ` ``), these "bad" chars are transformed into chars that are encoded in 2 bytes.
+Each byte of the source file is read as if it was a character. Result includes non-printable chars (`linefeed`, `tab`, `space`…), so these "bad" chars are shifted by 256, becoming 2-bytes chars. Quotes (`"`, `'`, `` ` ``) undergo the same process.
 
-Before this conversion every char gets shifted by 33 (char 0 becomes 33 and so on) in order to minimize "bad" chars that need 2 bytes, therefore limiting the file increase (most evident on txts and small files, like icons).
+Before this process every char gets shifted by 33, because in my testings this reduces "bad" chars that need 2 bytes, limiting size-increase (most evident on txts and small files, like icons).
+
+Decoding does the same in reverse and saves the result in a file called `file` in your temp folder.
+> **TECHNICAL**: each decoded byte is a **`num`** that fits in a byte, but AHK uses multiple bytes to store it. To write only the byte that stores **`num`** I use the ability of `.RawWrite` of accepting `address, len`, with <code>StrPtr(Chr(**num**)), 1</code> instead of **`num`**.
 
 <br/>
 
