@@ -1,8 +1,8 @@
-# FileEmbedder <sup><sub>v2.1.1 - previously PicEmbedder</sub></sup>
+# FileEmbedder <sup><sub>v2.2 - previously PicEmbedder</sub></sup>
 
 **Encode files into text** - embed resources as code and get rid of external dependencies.
 
-**Simple to use** - just [**Download**](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.1.1.ahk), launch, & follow instructions!
+**Simple to use** - just [**Download**](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.2.ahk), launch, & follow instructions!
 
 ### ![Demo gif of FileEmbedder](https://github.com/DavidBevi/PicEmbedder/blob/main/FileEmbedder_v2.1.1.gif?raw=true)
 
